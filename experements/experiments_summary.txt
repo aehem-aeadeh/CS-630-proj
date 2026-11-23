@@ -1,0 +1,36 @@
+
+=== EXPERIMENT A: Planning vs. Learning (Simple Deterministic 8x8) ===
+Algorithm             Success (%)   Avg Steps  Collisions   Eval Reward
+-----------------------------------------------------------------------
+Value Iteration            100.0%       14.00        0.00         87.00
+Policy Iteration           100.0%       14.00        0.00         87.00
+Q-Learning                 100.0%       14.00        0.00         87.00
+SARSA                      100.0%       14.00        0.00         87.00
+
+=== EXPERIMENT B1: Exploration Strategies (Q-Learning, 5 seeds) ===
+Strategy                     Success (%)  Avg Steps  Collisions  Train Last100
+------------------------------------------------------------------------------
+Constant eps=0.9 (High)           100.0%      14.00        0.00        -392.24
+Constant eps=0.3 (Moderate)       100.0%      14.00        0.00          63.85
+Constant eps=0.05 (Low)           100.0%      14.00        0.00          84.22
+Decreasing eps (1.0->0.05)        100.0%      14.00        0.00          84.64
+
+=== EXPERIMENT B2: Learning Rate (alpha) & Discount Factor (gamma) ===
+Alpha=0.05  | Success=100.0%, Steps=14.0, EvalReward=87.0
+Alpha=0.1   | Success=100.0%, Steps=14.0, EvalReward=87.0
+Alpha=0.5   | Success=100.0%, Steps=14.0, EvalReward=87.0
+Gamma=0.5   | Success=100.0%, Steps=14.0, EvalReward=87.0
+Gamma=0.95  | Success=100.0%, Steps=14.0, EvalReward=87.0
+
+=== EXPERIMENT C: Environment Complexity (5 seeds) ===
+Environment       Algo           Success (%)  Avg Steps  Collisions  Eval Reward
+--------------------------------------------------------------------------------
+Simple (Det.)     Value Iter.         100.0%      14.00        0.00        87.00
+Simple (Det.)     Q-Learning          100.0%      14.00        0.00        87.00
+Simple (Det.)     SARSA               100.0%      14.00        0.00        87.00
+Complex (Det.)    Value Iter.         100.0%      14.00        0.00        87.00
+Complex (Det.)    Q-Learning          100.0%      14.00        0.00        87.00
+Complex (Det.)    SARSA               100.0%      14.00        0.00        87.00
+Stochastic (20%)  Value Iter.         100.0%      18.56        1.64        67.68
+Stochastic (20%)  Q-Learning          100.0%      19.13        1.49        68.43
+Stochastic (20%)  SARSA               100.0%      18.85        1.65        67.27
